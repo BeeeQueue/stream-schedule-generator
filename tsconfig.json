@@ -1,9 +1,11 @@
 {
   "compilerOptions": {
+    "noEmit": true,
     "target": "esnext",
     "module": "esnext",
     "moduleResolution": "node",
     "strict": true,
+    "forceConsistentCasingInFileNames": true,
     "jsx": "preserve",
     "sourceMap": true,
     "lib": ["esnext", "dom"],
