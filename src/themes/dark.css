@@ -1,0 +1,27 @@
+html {
+  --black-100: #070707;
+  --black-200: #0e0e0e;
+  --black-300: #111;
+  --black-500: #1e1e1e;
+
+  --white-700: #f5f5f5;
+  --white-500: #dedede;
+  --white-400: #ccc;
+  --white-300: #aaa;
+
+  --background-primary: linear-gradient(
+    -45deg,
+    var(--black-100),
+    var(--black-300)
+  );
+  --background-action: linear-gradient(
+    -45deg,
+    var(--black-200),
+    var(--black-500)
+  );
+
+  --text-primary: var(--white-400);
+  --text-primary-hover: var(--white-700);
+  --text-secondary: var(--white-300);
+  --text-secondary-hover: var(--white-700);
+}
