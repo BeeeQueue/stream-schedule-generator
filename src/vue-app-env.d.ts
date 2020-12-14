@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/consistent-type-definitions */
 /// <reference types="vite/dist/importMeta" />
 
 declare namespace NodeJS {
@@ -18,7 +19,7 @@ declare namespace NodeJS {
   }
 }
 
-declare var process: NodeJS.Process
+// declare const process: NodeJS.Process
 
 declare module "*.gif" {
   const src: string
