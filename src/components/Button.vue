@@ -15,10 +15,10 @@ export default defineComponent({
 
 <style scoped>
 button {
-  padding: 16px 20px;
+  padding: 12px 18px;
 
   border: 0;
-  border-radius: 69px;
+  border-radius: 6px;
   background: var(--background-action);
   box-shadow: /* TL inset shine */ inset 4px 4px 4px -3px rgba(81, 81, 81, 0.5),
     /* TL inset shadow */ var(--no-box-shadow-inset),
@@ -27,10 +27,11 @@ button {
 
   cursor: pointer;
 
-  transition: 0.15s color, 0.15s background, 75ms box-shadow;
+  transition: 0.15s color, 0.15s background, 0.15s text-shadow, 75ms box-shadow;
 
   &:hover {
     color: var(--text-primary-hover);
+    text-shadow: 0 0 8px var(--text-primary-hover);
   }
 
   &:active {
