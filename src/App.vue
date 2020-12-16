@@ -1,16 +1,22 @@
 <template>
-  <Button>Do something</Button>
+  <Layout>
+    <div class="result" />
+
+    <Controls />
+  </Layout>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue"
 
-import Button from "./components/Button.vue"
+import Controls from "./components/Controls.vue"
+import Layout from "./components/Layout.vue"
 
 export default defineComponent({
   name: "App",
   components: {
-    Button,
+    Controls,
+    Layout,
   },
 })
 </script>
