@@ -3,6 +3,11 @@ import "modern-normalize"
 
 // @ts-ignore: For some reason it can't find the types in this file.
 import App from "./App.vue"
+import { key, store } from "./state/store"
 import "./themes/dark.css"
 
-createApp(App).mount("#app")
+const app = createApp(App)
+
+app.use(store, key)
+
+app.mount("#app")

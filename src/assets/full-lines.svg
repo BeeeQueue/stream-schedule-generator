@@ -1,0 +1,5 @@
+<svg baseProfile="full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 4">
+  <line opacity=".25" stroke="#444" x1="0" x2="6" y1="-2" y2="4" />
+
+  <line opacity=".25" stroke="#444" x1="-2" x2="4" y1="0" y2="6" />
+</svg>
