@@ -32,3 +32,15 @@ const storeOptions = {
 }
 
 export const store = createStore<RootState>(storeOptions)
+
+if (import.meta.hot) {
+  import.meta.hot!.acceptDeps(["./schedule"], async () => {
+    const newSchedule = await import("./schedule")
+
+    store.hotUpdate({
+      modules: {
+        [ScheduleModule.name]: newSchedule as any,
+      },
+    })
+  })
+}
