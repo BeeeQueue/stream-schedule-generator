@@ -1,7 +1,6 @@
-import { InjectionKey } from "vue"
-import { createStore, Store, useStore as originalUseStore } from "vuex"
+import { createLogger, createStore, Store } from "vuex"
 
-import { ScheduleModule as schedule, ScheduleState } from "./schedule"
+import { ScheduleModule, ScheduleState } from "./schedule"
 
 /* eslint-disable @typescript-eslint/consistent-type-definitions */
 declare module "@vue/runtime-core" {
@@ -17,22 +16,19 @@ declare module "@vue/runtime-core" {
 }
 /* eslint-enable @typescript-eslint/consistent-type-definitions */
 
+const isNotNilOrBoolean = <T>(obj: T | null | undefined | boolean): obj is T =>
+  typeof obj !== "boolean" || obj != null
+
 export type RootState = {
   schedule: ScheduleState
 }
 
 const storeOptions = {
-  mutations: {
-    testMutation: () => null,
-    testMutation2: (state: RootState, cool: string) => null,
-  },
-  modules: {
-    schedule,
-  },
   strict: import.meta.env.DEV,
+  modules: {
+    [ScheduleModule.name]: ScheduleModule,
+  },
+  plugins: [import.meta.env.DEV && createLogger()].filter(isNotNilOrBoolean),
 }
 
 export const store = createStore<RootState>(storeOptions)
-export const key: InjectionKey<Store<RootState>> = Symbol()
-
-export const useStore = () => originalUseStore(key)

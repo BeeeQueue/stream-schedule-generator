@@ -3,7 +3,7 @@
     <span class="draggable" />
 
     <div class="controls">
-      <div v-for="day in state.schedule.days" class="day">
+      <div v-for="day in days" class="day">
         {{ Weekday[day.weekDay] }}
       </div>
     </div>
@@ -13,26 +13,21 @@
 </template>
 
 <script lang="ts" setup>
-import { useStore } from "../state/store"
+import { computed } from "vue"
+
+import { useSchedule } from "../state/schedule"
+import { useStore } from "../state/use-store"
 import { Weekday } from "../types"
 
 import Button from "./Button.vue"
 
-const { state, commit } = useStore()
+const { mutations } = useSchedule()
+const { state } = useStore()
+
+const days = computed(() => state.schedule.days)
 
 const addDay = () => {
-  commit("testMutation")
-  commit("testMutation2", "")
-
-  // commit("testMutation2", [
-  //   ...state.schedule.days,
-  //   {
-  //     weekDay: Weekday.Sunday,
-  //     utcTime: "00:00",
-  //     title: "SOMA",
-  //     subtitle: "oh god",
-  //   },
-  // ])
+  mutations.setDays([...days.value, Weekday.Monday])
 }
 </script>
 

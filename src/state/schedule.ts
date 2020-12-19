@@ -1,8 +1,6 @@
-import { Module } from "vuex"
-
 import { Weekday } from "../types"
 
-import type { RootState } from "./store"
+import { createVuexHook } from "./create-hook"
 
 type SingularNumber = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
 
@@ -17,19 +15,22 @@ type Day = {
 }
 
 const defaultState = {
-  days: [] as Day[],
+  days: [] as Weekday[],
 }
 
 export type ScheduleState = typeof defaultState
 
-export const ScheduleModule: Module<ScheduleState, RootState> = {
+export const ScheduleModule = {
+  name: "schedule",
   namespaced: true,
 
-  state: () => defaultState,
+  state: (): ScheduleState => defaultState,
 
   mutations: {
-    setDays(store, days: Day[]): void {
+    setDays(store: ScheduleState, days: Weekday[]): void {
       store.days = days
     },
   },
-}
+} as const
+
+export const useSchedule = createVuexHook(ScheduleModule)

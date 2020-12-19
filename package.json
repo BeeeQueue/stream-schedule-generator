@@ -29,6 +29,7 @@
     "postcss-nesting": "7.0.1",
     "prettier": "2.2.1",
     "typescript": "4.1.3",
+    "utility-types": "3.10.0",
     "vite": "1.0.0-rc.13"
   }
 }
