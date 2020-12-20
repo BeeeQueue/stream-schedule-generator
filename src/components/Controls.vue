@@ -3,8 +3,8 @@
     <span class="draggable" />
 
     <div class="controls">
-      <div v-for="day in days" class="day">
-        {{ Weekday[day.weekDay] }}
+      <div v-for="(day, i) in days" :key="i" class="day">
+        {{ day.title }}
       </div>
     </div>
 
@@ -16,18 +16,22 @@
 import { computed } from "vue"
 
 import { useSchedule } from "../state/schedule"
-import { useStore } from "../state/use-store"
-import { Weekday } from "../types"
 
 import Button from "./Button.vue"
 
-const { mutations } = useSchedule()
-const { state } = useStore()
+const { state, mutations } = useSchedule()
 
-const days = computed(() => state.schedule.days)
+const days = computed(() => state.days)
 
 const addDay = () => {
-  mutations.setDays([...days.value, Weekday.Monday])
+  mutations.setDays([
+    ...days.value,
+    {
+      datetime: new Date("2020-12-24 04:00"),
+      title: "A stream",
+      subtitle: null,
+    },
+  ])
 }
 </script>
 
