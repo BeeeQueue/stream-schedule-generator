@@ -1,5 +1,5 @@
 <template>
-  <aside class="container">
+  <aside class="sidebar-container">
     <span class="draggable" />
 
     <div class="controls">
@@ -9,6 +9,8 @@
     </div>
 
     <Button @click="addDay">+</Button>
+
+    <Tabs />
   </aside>
 </template>
 
@@ -17,6 +19,8 @@ import { computed } from "vue"
 
 import Button from "../../components/Button.vue"
 import { useSchedule } from "../../state/schedule"
+
+import Tabs from "./Tabs.vue"
 
 const { state, mutations } = useSchedule()
 
@@ -35,8 +39,14 @@ const addDay = () => {
 </script>
 
 <style scoped>
-.container {
+.sidebar-container {
   position: relative;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
   background: var(--background-primary);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   padding-left: 4px;
@@ -48,7 +58,7 @@ const addDay = () => {
     left: 0;
     bottom: 0;
 
-    background-image: url(../assets/full-lines.svg);
+    background-image: url(../../assets/full-lines.svg);
     background-size: 6px;
     cursor: w-resize;
   }
