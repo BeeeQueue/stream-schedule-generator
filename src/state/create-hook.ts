@@ -13,17 +13,6 @@ type Mutations<M extends NamedModule> = {
   ) => void
 }
 
-type Actions<M extends NamedModule> = {
-  // @ts-ignore: Broken keyof
-  [key in keyof M["actions"]]: (data: Parameters<M["actions"][key]>[1]) => void
-}
-
-type Hook<M extends NamedModule> = DeepReadonly<{
-  state: M["state"] extends () => void ? ReturnType<M["state"]> : M["state"]
-  mutations: Mutations<M>
-  actions: Actions<M>
-}>
-
 const createMutations = <M extends NamedModule>(
   module: M,
   commit: Commit,
@@ -39,6 +28,12 @@ const createMutations = <M extends NamedModule>(
       )
     : ({} as Mutations<M>)
 
+// TODO: check if actions can take more than one arg
+type Actions<M extends NamedModule> = {
+  // @ts-ignore: Broken keyof
+  [key in keyof M["actions"]]: (data: Parameters<M["actions"][key]>[1]) => void
+}
+
 const createActions = <M extends NamedModule>(
   module: M,
   commit: Dispatch,
@@ -53,6 +48,12 @@ const createActions = <M extends NamedModule>(
         {} as Actions<M>,
       )
     : ({} as Actions<M>)
+
+type Hook<M extends NamedModule> = DeepReadonly<{
+  state: M["state"] extends () => void ? ReturnType<M["state"]> : M["state"]
+  mutations: Mutations<M>
+  actions: Actions<M>
+}>
 
 export const createVuexHook = <M extends NamedModule>(
   module: M,
