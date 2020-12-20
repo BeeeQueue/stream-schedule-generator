@@ -2,7 +2,7 @@
   <Layout>
     <div class="result" />
 
-    <Controls />
+    <Sidebar />
   </Layout>
 </template>
 
@@ -10,12 +10,12 @@
 import { defineComponent } from "vue"
 
 import Layout from "./components/Layout.vue"
-import Controls from "./components/sidebar/Controls.vue"
+import Sidebar from "./modules/sidebar/Sidebar.vue"
 
 export default defineComponent({
   name: "App",
   components: {
-    Controls,
+    Sidebar,
     Layout,
   },
 })
