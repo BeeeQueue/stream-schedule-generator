@@ -15,9 +15,8 @@
 <script lang="ts" setup>
 import { computed } from "vue"
 
-import { useSchedule } from "../state/schedule"
-
-import Button from "./Button.vue"
+import Button from "../../components/Button.vue"
+import { useSchedule } from "../../state/schedule"
 
 const { state, mutations } = useSchedule()
 

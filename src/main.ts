@@ -5,7 +5,7 @@ import "modern-normalize"
 import App from "./App.vue"
 import { store } from "./state/store"
 import "./themes/dark.css"
-import { key } from "./state/use-store"
+import { key } from "./state/utils/use-store"
 
 const app = createApp(App)
 

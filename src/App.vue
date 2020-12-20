@@ -9,8 +9,8 @@
 <script lang="ts">
 import { defineComponent } from "vue"
 
-import Controls from "./components/Controls.vue"
 import Layout from "./components/Layout.vue"
+import Controls from "./components/sidebar/Controls.vue"
 
 export default defineComponent({
   name: "App",

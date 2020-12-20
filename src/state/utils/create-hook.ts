@@ -1,7 +1,8 @@
 import type { DeepReadonly } from "utility-types"
 import type { Commit, Dispatch, Module } from "vuex"
 
-import type { RootState } from "./store"
+import type { RootState } from "../store"
+
 import { useStore } from "./use-store"
 
 type NamedModule = Module<any, any> & { name: string }
