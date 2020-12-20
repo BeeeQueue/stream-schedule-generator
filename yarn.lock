@@ -65,7 +65,7 @@
   resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.12.10.tgz#824600d59e96aea26a5a2af5a9d812af05c3ae81"
   integrity sha512-PJdRPwyoOqFAWfLytxrWwGrAxghCgh/yTNCYciOz8QgjflA7aZhECPZAa2VUedKg2+QMWkI0L9lynh2SNmNEgA==
 
-"@babel/template@^7.10.4":
+"@babel/template@^7.10.4", "@babel/template@^7.12.7":
   version "7.12.7"
   resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.12.7.tgz#c817233696018e39fbb6c491d2fb684e05ed43bc"
   integrity sha512-GkDzmHS6GV7ZeXfJZ0tLRBhZcMcY0/Lnb+eEbXDBfCAcZCjrZKe6p3J4we/D24O9Y8enxWAg1cWwof59yLh2ow==
@@ -534,90 +534,93 @@
   resolved "https://registry.yarnpkg.com/@vue/shared/-/shared-3.0.4.tgz#6dc50f593bdfdeaa6183d1dbc15e2d45e7c6b8b3"
   integrity sha512-Swfbz31AaMX48CpFl+YmIrqOH9MgJMTrltG9e26A4ZxYx9LjGuMV+41WnxFzS3Bc9nbrc6sDPM37G6nIT8NJSg==
 
-"@vuedx/analyze@0.3.1-insiders-1606311019.0":
-  version "0.3.1-insiders-1606311019.0"
-  resolved "https://registry.yarnpkg.com/@vuedx/analyze/-/analyze-0.3.1-insiders-1606311019.0.tgz#4b1e739b683aa3379b17728272f105876591c227"
-  integrity sha512-8XB92EWWc673dQl2i7fUeYL4nkiCZlHDkvroMwjlB5MYXnFG5j4NqBUnTbwuCl/B6jOyIe5+PAOxHYKhs1QPVA==
+"@vuedx/analyze@0.3.1-insiders-1608294809.0":
+  version "0.3.1-insiders-1608294809.0"
+  resolved "https://registry.yarnpkg.com/@vuedx/analyze/-/analyze-0.3.1-insiders-1608294809.0.tgz#cbe54f8bbff11349e97f3aece6dab8b4ec67d92d"
+  integrity sha512-m37sLhZ9QB91IzPMx9GBANk90QgEcjbNYjdlSRco1k9CI/I3dRytgX9Cf3tUSu3APFXkwBZwo/yryAnYAZU34g==
   dependencies:
     "@babel/code-frame" "^7.10.4"
     "@babel/generator" "^7.12.1"
     "@babel/parser" "^7.12.3"
+    "@babel/template" "^7.12.7"
     "@babel/traverse" "7.12.1"
     "@babel/types" "7.12.1"
     "@types/micromatch" "^4.0.1"
-    "@vue/compiler-core" "^3.0.1"
-    "@vuedx/compiler-sfc" "0.3.1-insiders-1606311019.0"
-    "@vuedx/projectconfig" "0.3.3-insiders-1606311019.0"
+    "@vuedx/compiler-sfc" "0.3.1-insiders-1608294809.0"
+    "@vuedx/compiler-tsx" "0.3.1-insiders-1608294809.0"
+    "@vuedx/projectconfig" "0.3.3-insiders-1608294809.0"
+    "@vuedx/template-ast-types" "0.3.1-insiders-1608294809.0"
     cli-highlight "^2.1.4"
     commander "^6.1.0"
     fast-glob "^3.2.4"
     hash-sum "^2.0.0"
     micromatch "^4.0.2"
 
-"@vuedx/compiler-sfc@0.3.1-insiders-1606311019.0":
-  version "0.3.1-insiders-1606311019.0"
-  resolved "https://registry.yarnpkg.com/@vuedx/compiler-sfc/-/compiler-sfc-0.3.1-insiders-1606311019.0.tgz#3c6356af0185674af5487a9d7c1e3ea3a1b8edb6"
-  integrity sha512-Nqx948BkNeB7aslaTRKNTJuUgCE3dZLqwKvdB8UUjKlw1lVb3xXyhX8w/0/T9uqZUF2CrwBXvG9hILUDR4YOxw==
+"@vuedx/compiler-sfc@0.3.1-insiders-1608294809.0":
+  version "0.3.1-insiders-1608294809.0"
+  resolved "https://registry.yarnpkg.com/@vuedx/compiler-sfc/-/compiler-sfc-0.3.1-insiders-1608294809.0.tgz#c6b39c4963d72dcbc03ecd1a52518666dcc4687d"
+  integrity sha512-4WYFKyg/5WjJrZKQ33tQLSknQXtQuggsFOm5/T+CP03RORp26uZncPcHX4IXB09OYM6DleGnksL8EL/Arn14Pw==
   dependencies:
     "@vue/compiler-core" "^3.0.2"
     lru-cache "^6.0.0"
     source-map "^0.6.1"
 
-"@vuedx/compiler-tsx@0.3.1-insiders-1606311019.0":
-  version "0.3.1-insiders-1606311019.0"
-  resolved "https://registry.yarnpkg.com/@vuedx/compiler-tsx/-/compiler-tsx-0.3.1-insiders-1606311019.0.tgz#7f11df2ef9b33ad2ea93f339cc71a467e7253c65"
-  integrity sha512-7pHyHICuX48qNi2iQkTgIHZA7DYhh82yxvT4okg0NkN3S59HpnHZuBiz5PvH2RbUqMc3ujbjHGnSF+cBNXtr2w==
+"@vuedx/compiler-tsx@0.3.1-insiders-1608294809.0":
+  version "0.3.1-insiders-1608294809.0"
+  resolved "https://registry.yarnpkg.com/@vuedx/compiler-tsx/-/compiler-tsx-0.3.1-insiders-1608294809.0.tgz#e662c66422e1d0818412bb9cca2373301ee289ef"
+  integrity sha512-XMP3EKE+vyCFwAXTjyLv/LJ5CTgoVaEX44EejUhHzWg1U9oGKmMAK7jFBGCl3LbIcckC2VbhrWGG2xswZ4WPeQ==
   dependencies:
     "@babel/parser" "7.12.3"
     "@babel/types" "7.12.1"
     "@vue/compiler-core" "^3.0.1"
-    "@vuedx/template-ast-types" "0.3.1-insiders-1606311019.0"
-    lodash.camelcase "^4.3.0"
+    "@vuedx/template-ast-types" "0.3.1-insiders-1608294809.0"
 
-"@vuedx/projectconfig@0.3.3-insiders-1606311019.0":
-  version "0.3.3-insiders-1606311019.0"
-  resolved "https://registry.yarnpkg.com/@vuedx/projectconfig/-/projectconfig-0.3.3-insiders-1606311019.0.tgz#3a33a7839bf744d8dd2f6bf3bec02447f71dc124"
-  integrity sha512-wEe3W5kZR72PC7NAuf7kTtY8e+JJ54t257XfN/r4e8wN2tiQ5W3ktKpQNljW94YbORHk+fNuVlE5lqG1603aqQ==
+"@vuedx/projectconfig@0.3.3-insiders-1608294809.0":
+  version "0.3.3-insiders-1608294809.0"
+  resolved "https://registry.yarnpkg.com/@vuedx/projectconfig/-/projectconfig-0.3.3-insiders-1608294809.0.tgz#b818b3497d2335836a804ddf9bbd4ef726d954be"
+  integrity sha512-rd9IFkMZGkd8z84I4JAqEWKpO7LzG2aEayFcL65L/kmr5rl+C7k3D5CcmzZCmAM5zMJMpq8oBI/jpFzLaJlWsQ==
 
-"@vuedx/template-ast-types@0.3.1-insiders-1606311019.0":
-  version "0.3.1-insiders-1606311019.0"
-  resolved "https://registry.yarnpkg.com/@vuedx/template-ast-types/-/template-ast-types-0.3.1-insiders-1606311019.0.tgz#17c3d54c7b27bfbc4382f04a9f16a8829e80843d"
-  integrity sha512-JViIzkzGIgI0RJue7mOJP6p6IPp6zQLDDUMkDfUPV+kAUiob/Tk5tMuRe+pV+DqAfQDTZa8dvm7tM4ilWbdzBw==
+"@vuedx/template-ast-types@0.3.1-insiders-1608294809.0":
+  version "0.3.1-insiders-1608294809.0"
+  resolved "https://registry.yarnpkg.com/@vuedx/template-ast-types/-/template-ast-types-0.3.1-insiders-1608294809.0.tgz#aad12e3b17aa9aea122b900ded849c25cc463599"
+  integrity sha512-wVcC7fT+DB+8/Ugy30wSYCzYc68NURZcpkBXBhxdrSHS7BiZVt7TGKQf5IyPXnWLEEoQ0nkFovQMXKh8X/fdcQ==
   dependencies:
     "@vue/compiler-core" "^3.0.0"
 
-"@vuedx/typecheck@0.3.1-insiders-1606311019.0":
-  version "0.3.1-insiders-1606311019.0"
-  resolved "https://registry.yarnpkg.com/@vuedx/typecheck/-/typecheck-0.3.1-insiders-1606311019.0.tgz#a596737b48d217f639599a6ba144910ce10de2bb"
-  integrity sha512-0fnwon1T2Ga0aSzzjFtiKxSEJddJt8uhjE85egMn/RfhhMycQhmzaqsweO9yT+2N6rHNIJ+5SF5yxqv+zRaGKQ==
+"@vuedx/typecheck@0.3.1-insiders-1608294809.0":
+  version "0.3.1-insiders-1608294809.0"
+  resolved "https://registry.yarnpkg.com/@vuedx/typecheck/-/typecheck-0.3.1-insiders-1608294809.0.tgz#41b9919355bdad0605ddbb6286fd7b47ca947d08"
+  integrity sha512-VTBAA9ejIAkeIJxSW/htCrncdF/g6tAEsmNJlf47HgWVELlTf//iBEWjygoMFh5njd+TVNbnMcuPyvgoXJRwcw==
   dependencies:
-    "@vuedx/typescript-plugin-vue" "0.3.1-insiders-1606311019.0"
-    "@vuedx/vue-virtual-textdocument" "0.3.1-insiders-1606311019.0"
+    "@vuedx/typescript-plugin-vue" "0.3.1-insiders-1608294809.0"
+    "@vuedx/vue-virtual-textdocument" "0.3.1-insiders-1608294809.0"
     chalk "^4.1.0"
     minimist "^1.2.5"
     typescript "^4.0.3"
 
-"@vuedx/typescript-plugin-vue@0.3.1-insiders-1606311019.0":
-  version "0.3.1-insiders-1606311019.0"
-  resolved "https://registry.yarnpkg.com/@vuedx/typescript-plugin-vue/-/typescript-plugin-vue-0.3.1-insiders-1606311019.0.tgz#210d804e67e3c24ef61d617353258628a35a0d32"
-  integrity sha512-zyJ8rPXNOMKRiwZHN+79pKPJClZYtc/JdUZ15UcRxDkRc2WWhUxkVQg5JsQn0zhSt2tCzVxGtIbF9xxm2zqh7g==
+"@vuedx/typescript-plugin-vue@0.3.1-insiders-1608294809.0":
+  version "0.3.1-insiders-1608294809.0"
+  resolved "https://registry.yarnpkg.com/@vuedx/typescript-plugin-vue/-/typescript-plugin-vue-0.3.1-insiders-1608294809.0.tgz#3e0c035d06c1aed1bf293c54029e0d197572a521"
+  integrity sha512-DBdSCZgCdVIXPTh1i8aGh6f4igv2clBNO96Qgb1kloW80kumugNIY/wutnlxo0+ZZomObCTEuYXvZYHFh9JH1Q==
   dependencies:
-    "@vuedx/analyze" "0.3.1-insiders-1606311019.0"
-    "@vuedx/template-ast-types" "0.3.1-insiders-1606311019.0"
-    "@vuedx/vue-virtual-textdocument" "0.3.1-insiders-1606311019.0"
+    "@vuedx/analyze" "0.3.1-insiders-1608294809.0"
+    "@vuedx/compiler-sfc" "0.3.1-insiders-1608294809.0"
+    "@vuedx/projectconfig" "0.3.3-insiders-1608294809.0"
+    "@vuedx/template-ast-types" "0.3.1-insiders-1608294809.0"
+    "@vuedx/vue-virtual-textdocument" "0.3.1-insiders-1608294809.0"
     de-indent "^1.0.2"
     json5 "^2.1.3"
     quick-lru "^5.1.1"
     vscode-uri "^2.1.2"
 
-"@vuedx/vue-virtual-textdocument@0.3.1-insiders-1606311019.0":
-  version "0.3.1-insiders-1606311019.0"
-  resolved "https://registry.yarnpkg.com/@vuedx/vue-virtual-textdocument/-/vue-virtual-textdocument-0.3.1-insiders-1606311019.0.tgz#c7147530c7b99a0db0ee8513f1c2ad711ab9084d"
-  integrity sha512-kNgLyKQQHHaBkYg0PtyaSB7hGDE+hzSPerKgR+0Sf5N9u10bphUdryx64JAWTxQK3AvRBmnepG3hPhqqRl/eJw==
+"@vuedx/vue-virtual-textdocument@0.3.1-insiders-1608294809.0":
+  version "0.3.1-insiders-1608294809.0"
+  resolved "https://registry.yarnpkg.com/@vuedx/vue-virtual-textdocument/-/vue-virtual-textdocument-0.3.1-insiders-1608294809.0.tgz#c9d03d6fe9eba7d8a5d61e3d1f9a7acb998085ab"
+  integrity sha512-uLXn2LIjacAJFYFLo5wbRhi8Ea5PDfElb4AftOCbQBiylLBxhUCvD2qKx1RJlzzaexgCao5K5AhNugKl3778tw==
   dependencies:
-    "@vuedx/analyze" "0.3.1-insiders-1606311019.0"
-    "@vuedx/compiler-sfc" "0.3.1-insiders-1606311019.0"
-    "@vuedx/compiler-tsx" "0.3.1-insiders-1606311019.0"
+    "@vuedx/analyze" "0.3.1-insiders-1608294809.0"
+    "@vuedx/compiler-sfc" "0.3.1-insiders-1608294809.0"
+    "@vuedx/compiler-tsx" "0.3.1-insiders-1608294809.0"
     source-map "^0.6.1"
     vscode-languageserver-textdocument "^1.0.1"
     vscode-uri "^2.1.2"
