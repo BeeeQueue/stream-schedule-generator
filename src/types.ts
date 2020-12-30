@@ -1,4 +1,4 @@
-type Art = {
+export type Art = {
   blob: string
   scale: number
   offset: {

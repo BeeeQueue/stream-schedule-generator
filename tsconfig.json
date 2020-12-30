@@ -5,12 +5,14 @@
     "module": "esnext",
     "moduleResolution": "node",
     "strict": true,
+    "isolatedModules": true,
+    "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "experimentalDecorators": true,
     "jsx": "preserve",
     "sourceMap": true,
     "lib": ["esnext", "dom"],
-    "plugins": [{ "name": "@vuedx/typescript-plugin-vue" }],
+    //    "plugins": [{ "name": "@vuedx/typescript-plugin-vue" }],
     "types": ["vite/dist/importMeta"]
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
