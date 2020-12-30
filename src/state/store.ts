@@ -1,5 +1,6 @@
 import { createLogger, createStore, Store } from "vuex"
 
+import { AppModule } from "./app"
 import { ScheduleModule, ScheduleState } from "./schedule"
 import { SidebarModule } from "./sidebar"
 
@@ -27,6 +28,7 @@ export type RootState = {
 const storeOptions = {
   strict: import.meta.env.DEV,
   modules: {
+    [AppModule.name]: AppModule,
     [ScheduleModule.name]: ScheduleModule,
     [SidebarModule.name]: SidebarModule,
   },
@@ -36,6 +38,15 @@ const storeOptions = {
 export const store = createStore<RootState>(storeOptions)
 
 if (import.meta.hot) {
+  import.meta.hot!.acceptDeps(["./app"], async () => {
+    const newModule = await import("./app")
+
+    store.hotUpdate({
+      modules: {
+        [AppModule.name]: newModule as any,
+      },
+    })
+  })
   import.meta.hot!.acceptDeps(["./schedule"], async () => {
     const newModule = await import("./schedule")
 

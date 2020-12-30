@@ -1,24 +1,25 @@
 <template>
-  <Layout>
+  <Layout v-if="user != null">
     <div class="result" />
 
     <Sidebar />
   </Layout>
+  <Login v-else />
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue"
+<script lang="ts" setup>
+import { computed, watch } from "vue"
 
 import Layout from "./components/Layout.vue"
+import Login from "./components/Login.vue"
 import Sidebar from "./modules/sidebar/Sidebar.vue"
+import { useApp } from "./state/app"
 
-export default defineComponent({
-  name: "App",
-  components: {
-    Sidebar,
-    Layout,
-  },
-})
+const {
+  state: { session },
+} = useApp()
+
+const user = computed(() => session?.user ?? null)
 </script>
 
 <style>
@@ -51,5 +52,13 @@ button,
 #app {
   color: var(--text-primary);
   font-size: 16px;
+}
+
+input {
+  padding: 8px 15px;
+
+  border-radius: 5px;
+  background: var(--background-action);
+  border: 2px solid var(--black-300);
 }
 </style>

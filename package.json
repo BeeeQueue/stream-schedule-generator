@@ -10,6 +10,7 @@
     "postinstall": "husky install"
   },
   "dependencies": {
+    "@supabase/supabase-js": "1.1.2",
     "modern-normalize": "1.0.0",
     "vue": "3.0.4",
     "vuex": "4.0.0-rc.2"
