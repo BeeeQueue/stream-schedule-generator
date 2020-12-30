@@ -43,7 +43,7 @@ const createActions = <M extends NamedModule>(
     ? Object.keys(module.actions).reduce(
         (accum, name) => ({
           ...accum,
-          [name]: (...params: unknown[]) =>
+          [name]: async (...params: unknown[]) =>
             commit(`${module.name}/${name}`, ...params),
         }),
         {} as Actions<M>,
