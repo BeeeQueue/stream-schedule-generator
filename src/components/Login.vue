@@ -4,26 +4,18 @@
       <div class="login-modal">
         Login
 
-        <input v-model="username" type="email" placeholder="Email" />
-        <input v-model="password" type="password" placeholder="Password" />
-
-        <Button @click="login(username, password)">Login</Button>
+        <Button @click="loginGitHub()">Github</Button>
       </div>
     </div>
   </transition>
 </template>
 
 <script lang="ts" setup>
-import { ref } from "vue"
-
 import { useApp } from "../state/app"
 
 const {
-  actions: { login },
+  actions: { loginGitHub },
 } = useApp()
-
-const username = ref("")
-const password = ref("")
 </script>
 
 <style scoped>

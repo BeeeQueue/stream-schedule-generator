@@ -1,18 +1,14 @@
 import { ActionContext } from "vuex"
 
-import { createClient, Session } from "@supabase/supabase-js"
+import { Session } from "@supabase/supabase-js"
+
+import { supabase } from "../supabase"
 
 import { RootState } from "./store"
 import { createVuexHook } from "./utils/create-hook"
 
-const supabaseClient = createClient(
-  import.meta.env.VITE_SUPABASE_URL as string,
-  import.meta.env.VITE_SUPABASE_PUBLIC_KEY as string,
-)
-
 const defaultState = {
-  supabase: supabaseClient,
-  session: supabaseClient.auth.session(),
+  session: supabase.auth.session(),
 }
 
 export type AppState = typeof defaultState
@@ -38,7 +34,7 @@ export const AppModule = {
       { state, commit }: ActionContext<AppState, RootState>,
       { email, password }: { email: string; password: string },
     ) {
-      const { data: session, error } = await state.supabase.auth.signIn({
+      const { data: session, error } = await supabase.auth.signIn({
         email,
         password,
       })
@@ -48,13 +44,27 @@ export const AppModule = {
         return console.error(error)
       }
 
-      commit("app/setUser", session)
+      commit("updateSession", session)
     },
+
+    async loginGitHub({ state, commit }: ActionContext<AppState, RootState>) {
+      const { data: session, error } = await supabase.auth.signIn({
+        provider: "github",
+      })
+
+      if (error != null) {
+        // eslint-disable-next-line no-console
+        return console.error(error)
+      }
+
+      commit("updateSession", session)
+    },
+
     async register(
       { state, commit }: ActionContext<AppState, RootState>,
       { email, password }: { email: string; password: string },
     ) {
-      const { data: session, error } = await state.supabase.auth.signUp({
+      const { data: session, error } = await supabase.auth.signUp({
         email,
         password,
       })
@@ -64,7 +74,7 @@ export const AppModule = {
         return console.error(error)
       }
 
-      commit("app/setUser", session)
+      commit("updateSession", session)
     },
   },
 } as const

@@ -8,18 +8,25 @@
 </template>
 
 <script lang="ts" setup>
-import { computed, watch } from "vue"
+import { computed } from "vue"
 
 import Layout from "./components/Layout.vue"
 import Login from "./components/Login.vue"
 import Sidebar from "./modules/sidebar/Sidebar.vue"
 import { useApp } from "./state/app"
+import { supabase } from "./supabase"
 
 const {
-  state: { session },
+  state: appState,
+  mutations: { updateSession },
 } = useApp()
 
-const user = computed(() => session?.user ?? null)
+const user = computed(() => appState.session?.user ?? null)
+
+supabase.auth.onAuthStateChange((event, session) => {
+  console.log(event, session?.user.email)
+  updateSession(session)
+})
 </script>
 
 <style>
