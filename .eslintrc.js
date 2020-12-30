@@ -28,6 +28,7 @@ module.exports = {
     // good to have
     "@typescript-eslint/prefer-string-starts-ends-with": "error",
     "@typescript-eslint/await-thenable": "error",
+    "@typescript-eslint/promise-function-async": "error",
     // consistency
     "@typescript-eslint/consistent-type-definitions": ["error", "type"],
     "@typescript-eslint/consistent-type-assertions": [
