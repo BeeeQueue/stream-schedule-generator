@@ -17,7 +17,6 @@
 <script lang="ts" setup>
 import { computed } from "vue"
 
-import Button from "../../components/Button.vue"
 import { useSchedule } from "../../state/schedule"
 
 import Tabs from "./Tabs.vue"

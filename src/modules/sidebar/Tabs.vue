@@ -14,7 +14,6 @@
 <script lang="ts" setup>
 import { computed } from "vue"
 
-import Button from "../../components/Button.vue"
 import { SidebarTab, useSidebar } from "../../state/sidebar"
 
 const { state, mutations } = useSidebar()
