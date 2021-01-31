@@ -13,7 +13,7 @@
     "sourceMap": true,
     "lib": ["esnext", "dom"],
     //    "plugins": [{ "name": "@vuedx/typescript-plugin-vue" }],
-    "types": ["vite/dist/importMeta"]
+    "types": ["vite/client"]
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
 }

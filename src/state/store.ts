@@ -37,8 +37,8 @@ const storeOptions = {
 
 export const store = createStore<RootState>(storeOptions)
 
-if (import.meta.hot) {
-  import.meta.hot!.acceptDeps(["./app"], async () => {
+if (import.meta.hot != null) {
+  import.meta.hot!.accept(["./app"], async () => {
     const newModule = await import("./app")
 
     store.hotUpdate({
@@ -47,7 +47,7 @@ if (import.meta.hot) {
       },
     })
   })
-  import.meta.hot!.acceptDeps(["./schedule"], async () => {
+  import.meta.hot!.accept(["./schedule"], async () => {
     const newModule = await import("./schedule")
 
     store.hotUpdate({
@@ -57,7 +57,7 @@ if (import.meta.hot) {
     })
   })
 
-  import.meta.hot!.acceptDeps(["./sidebar"], async () => {
+  import.meta.hot!.accept(["./sidebar"], async () => {
     const newModule = await import("./sidebar")
 
     store.hotUpdate({
